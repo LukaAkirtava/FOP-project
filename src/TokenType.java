@@ -1,8 +1,34 @@
-public enum TokenType {
-        NUMBER, IDENTIFIER, ASSIGN, PLUS, MINUS, MULTIPLY, DIVIDE, MODULO,
-        IF, ELSE, WHILE, PRINT, LBRACKET, RBRACKET, LBRACE, RBRACE, SEMICOLON,
-        COMMA, EQUALS, NOT_EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL,
-        LESS_THAN_OR_EQUAL, LOGICAL_AND, LOGICAL_OR, LOGICAL_NOT, INCREMENT,
-        DECREMENT, EOF, ERROR
+enum TokenType {
+        // Single-character tokens
+        PLUS, MINUS, STAR, SLASH, MOD, LPAREN, RPAREN, LBRACE, RBRACE, EQ, COLON,
+
+        // One or two character tokens for comparisons
+        GT, GTE, LT, LTE, EQEQ, NEQ,
+
+        // Literals
+        IDENT, NUMBER,
+
+        // Keywords
+        IF, ELSE, WHILE, PRINT,
+
+        // Utility
+        EOF
 }
-//comments here
+/*
+explanation for each one to understand what each is for:
+Single-character tokens
+        PLUS -> +, MINUS -> -, STAR -> *, SLASH -> /, MOD -> %,
+        LPAREN -> (, RPAREN -> ), LBRACE -> {, RBRACE _> }, EQ -> =, COLON -> :
+
+One or two character tokens for comparisons
+        GT -> >, GTE -> >=, LT -> <, LTE -> <=, EQEQ -> ==, NEQ -> !=
+
+Literals
+        IDENT ->name for variable, NUMBER -> number,
+
+Keywords
+        IF, ELSE, WHILE, PRINT, (I think this is understandable)
+
+Utility
+        EOF -> end of file
+ */
