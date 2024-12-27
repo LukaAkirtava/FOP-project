@@ -10,7 +10,7 @@ public class Token {
 /*
  toString Returns a string version of the token, so we can easily see
  what it is while debugging.
- for example: "Token(IDENT, x)" or "Token(NUMBER, 42)".
+ for example:"Token(IDENT, x)" or "Token(NUMBER, 42)".
  */
     @Override
     public String toString() {
