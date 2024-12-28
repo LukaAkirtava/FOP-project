@@ -65,5 +65,27 @@ The `TokenType` enum categorizes input from the source code, enabling the interp
 ---
 ✨ **More files coming soon to support the full interpreter!**
 
+# 🧩 Lexer.java – Tokenizer for Interpreter
+
+The `Lexer` class is responsible for converting a source string into a list of tokens. It scans the input character by character, grouping them into meaningful tokens (numbers, identifiers, operators, etc.), which are later processed by the interpreter.
+
+## 📋 Key Functions
+- **tokenize()**: Converts the input source code into a list of tokens by analyzing each character and categorizing it as an operator, number, identifier, or delimiter.
+- **advance()**: Moves the current index forward and returns the current character.
+- **addToken()**: Creates and adds a new token to the list of tokens.
+- **match()**: Checks if the next character matches an expected one, consuming it if true.
+- **isAlpha() / isDigit()**: Helper methods to check whether a character is alphabetic or a digit, respectively.
+- **number()**: Handles parsing number tokens and continues reading digits until the number is complete.
+- **identifier()**: Handles parsing identifiers or keywords, continuing to read characters until a full identifier is formed.
+- **checkKeyword()**: Checks if an identifier corresponds to a keyword (like `if`, `while`, `print`).
+
+## 🛠️ Purpose
+The `Lexer` breaks down the source code into manageable tokens, categorizing the smallest units of the program so that they can be parsed and executed by the interpreter. This is a critical step in the compilation or interpretation process.
+
+---
+
+✨ **Stay tuned for more components as we build the full interpreter!**
+
+
 
 ✨ **Stay tuned for exciting updates as we build this project together!**  
