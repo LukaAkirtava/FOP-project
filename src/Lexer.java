@@ -30,6 +30,85 @@ class Lexer {
         this.length = source.length();
     }
     /**
+      Tokenizes the input source code into a list of tokens.
+      Processes each character in the source string, identifying its type,
+      and creating corresponding tokens for operators, numbers, identifiers, and more...
+     */
+    public List<Token> tokenize() {
+        // Loop through the source code until reaching the end.
+        while (!isAtEnd()) {
+            // Read the current character and advance the position.
+            char c = advance();
+            switch (c) {
+                // Handle single-character tokens.
+                case '+': addToken(TokenType.PLUS, "+"); break;
+                case '-': addToken(TokenType.MINUS, "-"); break;
+                case '*': addToken(TokenType.STAR, "*"); break;
+                case '/': addToken(TokenType.SLASH, "/"); break;
+                case '%': addToken(TokenType.MOD, "%"); break;
+                case '(': addToken(TokenType.LPAREN, "("); break;
+                case ')': addToken(TokenType.RPAREN, ")"); break;
+                case '{': addToken(TokenType.LBRACE, "{"); break;
+                case '}': addToken(TokenType.RBRACE, "}"); break;
+                case ':': addToken(TokenType.COLON, ":"); break;
+
+                // Handle multi-character tokens.
+                case '=':
+                    if (match('=')) { // Check if the next character is '=' for '=='.
+                        addToken(TokenType.EQEQ, "==");
+                    } else { // Otherwise, it's a single '='.
+                        addToken(TokenType.EQ, "=");
+                    }
+                    break;
+
+                case '!':
+                    if (match('=')) { // Check if the next character is '=' for '!='.
+                        addToken(TokenType.NEQ, "!=");
+                    }
+                    // If it's a lone '!', ignore it for now or handle it as an error later.
+                    break;
+
+                case '>':
+                    if (match('=')) { // Check if the next character is '=' for '>='.
+                        addToken(TokenType.GTE, ">=");
+                    } else { // Otherwise, it's a single '>'.
+                        addToken(TokenType.GT, ">");
+                    }
+                    break;
+
+                case '<':
+                    if (match('=')) { // Check if the next character is '=' for '<='.
+                        addToken(TokenType.LTE, "<=");
+                    } else { // Otherwise, it's a single '<'.
+                        addToken(TokenType.LT, "<");
+                    }
+                    break;
+
+                // Handle whitespace characters.
+                case ' ':
+                case '\r':
+                case '\t':
+                case '\n':
+                    // Ignore all whitespace.
+                    break;
+
+                // Handle numbers, identifiers, and unknown characters.
+                default:
+                    if (isDigit(c)) { // If the character is a digit, process a number token.
+                        number(c);
+                    } else if (isAlpha(c)) { // If the character is alphabetic, process an identifier.
+                        identifier(c);
+                    }
+                    // Unknown characters are ignored for simplicity and no unnecessary errors .
+                    break;
+            }
+        }
+        // Add an EOF (End of File) token at the end of the input.
+        addToken(TokenType.EOF, "");
+        return tokens;
+    }
+
+    /**
      * Checks if we've reached the end of the source string.
      *
      * @return true if current >= length, otherwise false.
