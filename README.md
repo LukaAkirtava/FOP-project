@@ -63,7 +63,6 @@ This file defines the core `TokenType` enum, representing the various tokens use
 The `TokenType` enum categorizes input from the source code, enabling the interpreter to classify and process each component accurately. This is a crucial step in parsing and executing code.
 
 ---
-✨ **More files coming soon to support the full interpreter!**
 
 # 🧩 Lexer.java – Tokenizer for Interpreter
 
