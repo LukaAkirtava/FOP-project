@@ -64,6 +64,19 @@ The `TokenType` enum categorizes input from the source code, enabling the interp
 
 ---
 
+# 🧩 Token.java – Token Representation for Interpreter
+
+The `Token` class represents a single token in the source code, consisting of a type and the text it corresponds to. Tokens are used by the lexer to categorize input during lexical analysis.
+
+## 📋 Key Components
+- **type**: The type of the token (e.g., `IDENT`, `NUMBER`).
+- **text**: The actual text of the token as it appears in the source code.
+
+## 🛠️ Purpose
+The `Token` class holds the information for each token, enabling easy identification and manipulation during the lexing and parsing phases of the interpreter.
+
+---
+
 # 🧩 Lexer.java – Tokenizer for Interpreter
 
 The `Lexer` class is responsible for converting a source string into a list of tokens. It scans the input character by character, grouping them into meaningful tokens (numbers, identifiers, operators, etc.), which are later processed by the interpreter.
