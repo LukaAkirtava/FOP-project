@@ -83,6 +83,12 @@ class Lexer {
                         addToken(TokenType.LT, "<");
                     }
                     break;
+                case '#':
+                    while (!isAtEnd() && peek() != '\n') {
+                        advance(); // Skip comment
+                    }
+                    break;//when testing functions # comment element
+                        // caused errors which will be handled by this
 
                 // Handle whitespace characters.
                 case ' ':
@@ -98,8 +104,9 @@ class Lexer {
                         number(c);
                     } else if (isAlpha(c)) { // If the character is alphabetic, process an identifier.
                         identifier(c);
+                    } else {
+                        throw new RuntimeException("Unexpected character: " + c);
                     }
-                    // Unknown characters are ignored for simplicity and no unnecessary errors .
                     break;
             }
         }
