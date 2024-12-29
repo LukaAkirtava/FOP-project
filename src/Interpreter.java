@@ -26,4 +26,48 @@ public class Interpreter {
     public Interpreter(List<Token> tokens) {
         this.tokens = tokens;
     }
+    // ---------------------
+    // TOKEN UTILITIES
+    // ---------------------
+    private boolean isAtEnd() {
+        return peek().type == TokenType.EOF;
+    }
+
+    private Token peek() {
+        return tokens.get(current);
+    }
+
+    private Token previous() {
+        return tokens.get(current - 1);
+    }
+
+    private Token advance() {
+        if (!isAtEnd()) current++;
+        return previous();
+    }
+
+    private boolean check(TokenType type) {
+        if (isAtEnd()) return false;
+        return peek().type == type;
+    }
+
+    private boolean match(TokenType... types) {
+        for (TokenType type : types) {
+            if (check(type)) {
+                advance();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Token consume(TokenType type, String errorMessage) {
+        if (check(type)) return advance();
+        throw new RuntimeException(errorMessage + " Found: " + peek());
+    }
+
+    // Helper to reset the current pointer (used for while-block re-check).
+    private void resetTo(int newIndex) {
+        this.current = newIndex;
+    }
 }
