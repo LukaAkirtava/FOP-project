@@ -96,8 +96,6 @@ The `Lexer` breaks down the source code into manageable tokens, categorizing the
 
 ---
 
-✨ **Stay tuned for more components as we build the full interpreter!**
+🧩 Interpreter.java – Updated with Attributes and Constructor We’ve recently updated our Interpreter class to store the tokens and keep track of the current parsing position. In addition, we introduced a map to hold variables in memory. These changes allow the interpreter to manage program state more effectively and prepare it for upcoming language features like variable assignment and control flow.
 
-
-
-✨ **Stay tuned for exciting updates as we build this project together!**  
+📋 Key Changes Tokens List: A List to hold all tokens for the program. Current Index: An integer current that keeps track of where we are in the token list. Variables Map: A Map<String, Integer> that stores variable names and their values. Constructor: Accepts a list of tokens and initializes the interpreter’s state. 🛠️ Purpose These new attributes and the constructor help us structure the interpreter more clearly, paving the way for the parsing logic that will support variable assignments, expressions, conditionals, and loops. They form the core of the interpreter’s state management, allowing each token to be processed in sequence while maintaining information about declared variables.
