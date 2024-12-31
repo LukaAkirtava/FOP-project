@@ -153,3 +153,39 @@ Processes tokenized input to execute programs by evaluating expressions and mana
 ### 🛠️ Purpose
 These new attributes and the constructor help us structure the interpreter more clearly, paving the way for the parsing logic that will support variable assignments, expressions, conditionals, and loops. They form the core of the interpreter’s state management, allowing each token to be processed in sequence while maintaining information about declared variables.
 
+
+
+# 🚀 Main.java – Entry Point for Interpreter Testing
+
+The Main class serves as the testing ground for the Python-like interpreter. It compiles various code snippets, feeds them into the lexer and interpreter, and observes the results, facilitating the validation of interpreter functionalities.
+
+## 📋 Core Responsibilities
+- *Code Snippet Testing* – Provides a suite of sample programs to evaluate the interpreter.
+- *Lexer Integration* – Tokenizes input using the Lexer class.
+- *Interpreter Execution* – Processes tokens and executes code via the Interpreter class.
+- *Console Output* – Displays the source code, tokens, and results of interpretation.
+
+## 🛠️ Key Components
+- *runSnippet Method* –
+  - Accepts a code snippet and its title.
+  - Prints the source code.
+  - Tokenizes and interprets the input.
+  - Displays the output for verification.
+- *Test Cases* –
+  1. *Basic Arithmetic* – Simple addition and multiplication.
+  2. *Sum of N* – Iterative summation of numbers up to N.
+  3. *Factorial Calculation* – Computes factorial using a while loop.
+  4. *GCD Calculation* – Euclidean algorithm for GCD.
+  5. *Reverse Number* – Digit-by-digit reversal of an integer.
+  6. *Prime Check* – Determines if a number is prime.
+  7. *Palindrome Check* – Verifies if a number is palindromic.
+  8. *Largest Digit* – Finds the highest digit in a number.
+  9. *Sum of Digits* – Computes the sum of digits in a number.
+  10. *Multiplication Table* – Prints multiplication results for a given integer.
+  11. *Nth Fibonacci* – Iteratively calculates the Nth Fibonacci number.
+
+## 🎯 Purpose
+The Main class ensures comprehensive testing of the interpreter's capabilities, covering arithmetic, control flow, and algorithmic operations. It serves as the backbone for identifying bugs and refining interpreter logic.
+
+---
+
