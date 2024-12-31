@@ -171,11 +171,6 @@ Processes tokenized input to execute programs by evaluating expressions and mana
 
 ---
 
-## 🚧 Improvements
-- ... we will add things here later
-
----
-
 ### 📋 Key Changes
 - **Tokens List**: A List to hold all tokens for the program.
 - **Current Index**: An integer `current` that keeps track of where we are in the token list.
