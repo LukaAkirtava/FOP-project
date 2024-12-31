@@ -1,6 +1,6 @@
 enum TokenType {
         // Single-character tokens
-        PLUS, MINUS, STAR, SLASH, MOD, LPAREN, RPAREN, LBRACE, RBRACE, EQ, COLON,
+        PLUS, MINUS, STAR, SLASH, MOD, LPAREN, RPAREN, EQ, COLON,
 
         // One or two character tokens for comparisons
         GT, GTE, LT, LTE, EQEQ, NEQ,
@@ -12,6 +12,8 @@ enum TokenType {
         IF, ELSE, WHILE, PRINT,
 
         // Utility
+        NEWLINE, //this will be needed as we need new logic for loops
+        // We'll add a newline token to help detect indentation
         EOF
 }
 /*
