@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-  what does lexer class do?
-  Lexer: Converts raw source string into a stream of tokens.
+ what does lexer class do?
+ Lexer: Converts raw source string into a stream of tokens.
 
-  It recognizes keywords (if, else, while, print), operators (+, -, *, etc.),
-  identifiers, numbers, colons, and so forth.
+ It recognizes keywords (if, else, while, print), operators (+, -, *, etc.),
+ identifiers, numbers, colons, and so forth.
  */
 class Lexer {
     private final String source;  // This takes entire code as a single string
@@ -15,7 +15,7 @@ class Lexer {
     private List<Token> tokens = new ArrayList<>(); // Accumulates identified tokens
 
     /**
-      Construct a Lexer for the given source code.
+     Construct a Lexer for the given source code.
      */
     Lexer(String source) {
         this.source = source;
@@ -23,7 +23,7 @@ class Lexer {
     }
 
     /**
-      Main method to scan through the source and build a list of tokens.
+     Main method to scan through the source and build a list of tokens.
      */
     public List<Token> tokenize() {
         // We read character by character until end

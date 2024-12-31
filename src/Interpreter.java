@@ -19,7 +19,7 @@ public class Interpreter {
     private final Map<String, Integer> variables = new HashMap<>();
 
     /**
-      Line class: wraps tokens and their indent level
+     Line class: wraps tokens and their indent level
      */
     static class Line {
         final List<Token> tokens;
@@ -32,16 +32,16 @@ public class Interpreter {
     }
 
     /**
-      so we Construct an Interpreter with a list of tokens + original source.
-      We split tokens into lines by NEWLINE, attach indentation info,
-      then interpret line by line.
+     so we Construct an Interpreter with a list of tokens + original source.
+     We split tokens into lines by NEWLINE, attach indentation info,
+     then interpret line by line.
      */
     public Interpreter(List<Token> tokens, String originalSource) {
         this.lines = splitIntoIndentedLines(tokens, originalSource);
     }
 
     /**
-      this reads lines until done.
+     this reads lines until done.
      */
     public void interpret() {
         while (!isAtEnd()) {
@@ -50,8 +50,8 @@ public class Interpreter {
     }
 
     /**
-      Break tokens into lines, read indentation from the original source lines,
-      and build a "Line" object for each row of code.
+     Break tokens into lines, read indentation from the original source lines,
+     and build a "Line" object for each row of code.
      */
     private List<Line> splitIntoIndentedLines(List<Token> tokens, String source) {
         // Split source by actual newlines
@@ -108,7 +108,7 @@ public class Interpreter {
     }
 
     /**
-      Reads + interprets a single "Line" (which might be an assignment, if, while, etc.)
+     Reads + interprets a single "Line" (which might be an assignment, if, while, etc.)
      */
     private void interpretLine(Line line) {
         if (line.tokens.isEmpty()) {
@@ -163,7 +163,7 @@ public class Interpreter {
     }
 
     /**
-      We skip optional parentheses around the expression if present -> e.g.: print(z) or print z
+     We skip optional parentheses around the expression if present -> e.g.: print(z) or print z
      */
     private void parsePrint(Line line) {
         if (line.tokens.size() < 2) {
@@ -197,11 +197,11 @@ public class Interpreter {
     }
 
     /**
-      so it does something like this
-      if expr:
-        [block if expr != 0]
-      else:
-        [block if expr == 0]
+     so it does something like this
+     if expr:
+     [block if expr != 0]
+     else:
+     [block if expr == 0]
      */
     private void parseIf(Line line) {
         int colonIndex = findColon(line.tokens);
@@ -240,8 +240,8 @@ public class Interpreter {
     }
 
     /**
-      If we encounter 'else' unexpectedly, we skip it
-      because the real logic is handled in parseElseInternal.
+     If we encounter 'else' unexpectedly, we skip it
+     because the real logic is handled in parseElseInternal.
      */
     private void parseElse(Line line) {
         advanceLine();
@@ -249,7 +249,7 @@ public class Interpreter {
     }
 
     /**
-      Called right after an 'if' to interpret or skip the else block.
+     Called right after an 'if' to interpret or skip the else block.
      */
     private void parseElseInternal(Line line, boolean ifExecuted) {
         // Consume the 'else' line
@@ -266,8 +266,8 @@ public class Interpreter {
     }
 
     /**
-      while expr:
-        [block repeated if expr != 0]
+     while expr:
+     [block repeated if expr != 0]
      */
     private void parseWhile(Line line) {
         int colonIndex = findColon(line.tokens);
@@ -300,8 +300,8 @@ public class Interpreter {
     }
 
     /**
-      Finds the position of the first ':' in a list of tokens.
-      Returns -1 if not found.
+     Finds the position of the first ':' in a list of tokens.
+     Returns -1 if not found.
      */
     private int findColon(List<Token> tokens) {
         for (int i = 0; i < tokens.size(); i++) {
@@ -345,8 +345,8 @@ public class Interpreter {
     // ---------------------------------
 
     /**
-      Evaluate a simple left-to-right expression with
-      +, -, *, /, %, and comparisons (==, !=, <, etc.).
+     Evaluate a simple left-to-right expression with
+     +, -, *, /, %, and comparisons (==, !=, <, etc.).
      */
     private int evaluateExpression(List<Token> exprTokens) {
         if (exprTokens.isEmpty()) return 0;
@@ -398,9 +398,9 @@ public class Interpreter {
     }
 
     /**
-      Convert a token to an integer value:
-      - NUMBER => parseInt
-      - IDENT => fetch from variables map or 0 if undefined
+     Convert a token to an integer value:
+     - NUMBER => parseInt
+     - IDENT => fetch from variables map or 0 if undefined
      */
     private int getSingleValue(Token token) {
         switch (token.type) {
