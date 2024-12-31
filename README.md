@@ -18,6 +18,37 @@ will be capable of executing simple algorithms, serving as a proof of its functi
 | **Davit Meshvelashvili**    | Developer       | [Ak1ra777](https://github.com/Ak1ra777)          |
 | **Levan Lekvinadze**        | Developer       | [levani2405](https://github.com/levani2405)      |
 
+
+# How to Run and Test the Python Interpreter
+
+This guide explains how to run, test, and modify the Python interpreter implemented in Java.
+
+---
+
+## Prerequisites
+
+Before running the interpreter, ensure you have the following:
+
+1. *Java Development Kit (JDK):*  
+   Install JDK 8 or later. You can download it from:  
+   - [Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html)  
+   - [OpenJDK](https://openjdk.org/)
+
+2. *Command-Line or IDE:*  
+   Use a command-line tool like cmd`/bash` or an IDE like IntelliJ IDEA, Eclipse, or VS Code to compile and execute the Java code.
+
+---
+
+## Steps to Run the Interpreter
+
+Follow these steps to run the interpreter and execute Python-like code snippets:
+
+### Step 1: Clone the Repository
+Download the project from GitHub to your local machine:
+git clone https://github.com/LukaAkirtava/FOP-project.git
+cd <your-repository-name>
+after you got all the necessary files by cloning. In your InteliJ/Visual studio or any other java compiler run the Main class
+
 ---
 
 ## 🛠️ Project Goals
