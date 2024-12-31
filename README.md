@@ -44,10 +44,11 @@ Before running the interpreter, ensure you have the following:
 Follow these steps to run the interpreter and execute Python-like code snippets:
 
 ### Step 1: Clone the Repository
-Download the project from GitHub to your local machine:
-git clone https://github.com/LukaAkirtava/FOP-project.git
-cd <your-repository-name>
-after you got all the necessary files by cloning. In your InteliJ/Visual studio or any other java compiler run the Main class
+Download the project from GitHub to your local machine:  
+git clone https://github.com/LukaAkirtava/FOP-project.git  
+cd `<your-repository-name>`  
+### Step 2: Run the Main class
+after you got all the necessary files by cloning. In your InteliJ/Visual studio or any other java compiler run the `Main` class
 
 ---
 
