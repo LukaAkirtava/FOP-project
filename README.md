@@ -96,6 +96,60 @@ The `Lexer` breaks down the source code into manageable tokens, categorizing the
 
 ---
 
-🧩 Interpreter.java – Updated with Attributes and Constructor We’ve recently updated our Interpreter class to store the tokens and keep track of the current parsing position. In addition, we introduced a map to hold variables in memory. These changes allow the interpreter to manage program state more effectively and prepare it for upcoming language features like variable assignment and control flow.
+# 🧩 Interpreter.java – Updated with Attributes and Constructor
 
-📋 Key Changes Tokens List: A List to hold all tokens for the program. Current Index: An integer current that keeps track of where we are in the token list. Variables Map: A Map<String, Integer> that stores variable names and their values. Constructor: Accepts a list of tokens and initializes the interpreter’s state. 🛠️ Purpose These new attributes and the constructor help us structure the interpreter more clearly, paving the way for the parsing logic that will support variable assignments, expressions, conditionals, and loops. They form the core of the interpreter’s state management, allowing each token to be processed in sequence while maintaining information about declared variables.
+We’ve recently updated our `Interpreter` class to store the tokens and keep track of the current parsing position. In addition, we introduced a map to hold variables in memory. These changes allow the interpreter to manage program state more effectively and prepare it for upcoming language features like variable assignment and control flow.
+
+---
+
+## 🧩 Interpreter.java – Core Execution Engine
+
+The `Interpreter` class parses and executes tokenized source code, supporting variable assignments, arithmetic operations, conditionals, loops, and print statements.
+
+### 📋 Components
+- **Tokens** – List of tokens representing the program.
+- **Variables** – Stored in a `HashMap` with names and values.
+- **Control Flow** – Supports `if` and `while` blocks.
+
+### 🛠️ Purpose
+Processes tokenized input to execute programs by evaluating expressions and managing flow control.
+
+---
+
+## 🧩 Key Features
+- **Assignment** – `x = expr` stores values.
+- **Print** – Outputs results with `print(expr)`.
+- **Conditionals** – Executes `{}` blocks after `if`.
+- **Loops** – Re-evaluates conditions for `while`.
+- **Arithmetic** – `+`, `-`, `*`, `/`, `%` with precedence.
+- **Comparisons** – `==`, `!=`, `<`, `>`, `<=`, `>=`.
+
+---
+
+## 🚦 Execution Flow
+- **Blocks** – Executes or skips based on conditions.
+- **Looping** – Resets pointer for re-evaluation.
+- **Error Handling** – Division by zero and syntax checks (`=`, `:`).
+
+---
+
+## 📊 Efficiency and Readability
+- **Modular** – Separated parsing and expression evaluation.
+- **Extendable** – Easy to add new statements or expressions.
+
+---
+
+## 🚧 Improvements
+- ... we will add things here later
+
+---
+
+### 📋 Key Changes
+- **Tokens List**: A List to hold all tokens for the program.
+- **Current Index**: An integer `current` that keeps track of where we are in the token list.
+- **Variables Map**: A `Map<String, Integer>` that stores variable names and their values.
+- **Constructor**: Accepts a list of tokens and initializes the interpreter’s state.
+
+### 🛠️ Purpose
+These new attributes and the constructor help us structure the interpreter more clearly, paving the way for the parsing logic that will support variable assignments, expressions, conditionals, and loops. They form the core of the interpreter’s state management, allowing each token to be processed in sequence while maintaining information about declared variables.
+
